@@ -1,6 +1,5 @@
 import React from 'react'
-import { Row, Col, Menu,Icon,Tabs,message,Form,Input,Button } from 'antd';
-const FormItem = Form.Item
+import { Row, Col, Menu,Icon} from 'antd';
 export default class Header extends React.Component{
     constructor(){
         super()
@@ -17,28 +16,44 @@ export default class Header extends React.Component{
         return(
             <header>
                 <Row>
-                    <Col span={3}>
+                    <Col span={2}>
                         <span className="iconfont icon-iconNews"></span>
                     </Col>
-                    <Col span={20}>
+                    <Col span={4}>
+						<a href="/" className="logo">
+							<img src={require('../../images/logo.png')} alt="logo"/>
+							<span>ReactNews</span>
+						</a>
+					</Col>
+                    <Col span={16}>
                         <Menu onClick={this.handle} selectedKeys={[this.state.menuCurrent]} mode='horizontal'>
-                            <Menu.Item key="bank">
-                                <Icon type="bank"></Icon>
-                            </Menu.Item>
-                            <Menu.Item key="book">
-                                <Icon type="book"></Icon>
-                            </Menu.Item>
-                            <Menu.Item key="apple">
-                                <Icon type="apple"></Icon>
-                            </Menu.Item>
-                            <Menu.Item key="car">
-                                <Icon type="car"></Icon>
-                            </Menu.Item>
-                            <Menu.Item key="cloud">
-                                <Icon type="cloud"></Icon>
-                            </Menu.Item>
+                        <Menu.Item key="top">
+								<Icon type="appstore"/>头条
+							</Menu.Item>
+							<Menu.Item key="shehui">
+								<Icon type="appstore"/>社会
+							</Menu.Item>
+							<Menu.Item key="guonei">
+								<Icon type="appstore"/>国内
+							</Menu.Item>
+							<Menu.Item key="guoji">
+								<Icon type="appstore"/>国际
+							</Menu.Item>
+							<Menu.Item key="yule">
+								<Icon type="appstore"/>娱乐
+							</Menu.Item>
+							<Menu.Item key="tiyu">
+								<Icon type="appstore"/>体育
+							</Menu.Item>
+							<Menu.Item key="keji">
+								<Icon type="appstore"/>科技
+							</Menu.Item>
+							<Menu.Item key="shishang">
+								<Icon type="appstore"/>时尚
+							</Menu.Item>
                         </Menu>
                     </Col>
+                    <Col span={2}></Col>
                 </Row>
                 <h1>这是头部</h1>
             </header>
