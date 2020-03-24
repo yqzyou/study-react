@@ -1,7 +1,7 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import ComponentHeader from './js/components/header'
+import {Header} from './js/components/header'
 import ComponentBody from './js/components/content'
 import ComponentFooter from './js/components/footer'
 
@@ -15,7 +15,7 @@ class App extends React.Component{
   render(){
     return (
       <div className="App">
-        <ComponentHeader></ComponentHeader>
+        <Header></Header>
         <ComponentBody userid={1234}></ComponentBody>
         <ComponentFooter></ComponentFooter>
       </div>
