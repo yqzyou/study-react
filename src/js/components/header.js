@@ -1,13 +1,43 @@
-import React,{ useState }from 'react'
+import React,{ useState,useEffect }from 'react'
 import { Row, Col, Menu,Button,Modal} from 'antd';
 import Icon from '@ant-design/icons'
 import LoginForm from './login'
+
+
+function useConstruct(fn) {
+    // useState 传入初始化函数 fn 只会执行一次
+    useState(fn);
+  }
+  
+  // componentDidMount
+  function useDidMount(fn) {
+    // 依赖项给空数组，只会执行一次
+    useEffect(fn, []);
+  }
+  
+  // componentDidUpdate
+  function useDidUpdate(fn) {
+    // 依赖项不传值，任何触发的 render 都会执行
+    useEffect(fn);
+  }
+  
+  // componentWillUnmount
+  function useUnMount(fn) {
+    useEffect(() => fn, []);
+  }
+
 export const Header = () =>{
     const [menuCurrent, setCount] = useState('top');
     const [visible,setVisible] = useState(false)
     const [isHasLogin, setLogin] = useState(false);
     // this.state = {menuCurrent:'bank',
     // }
+    useDidMount(()=>{
+        console.log('234')
+    })
+    useDidUpdate(()=>{
+        console.log('345')
+    })
     const handle = (e)=>{
         console.log(e)
         setCount(e.key)

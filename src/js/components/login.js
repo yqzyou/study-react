@@ -8,16 +8,15 @@ export default (props)=> {
 	console.log(props)
 		//页面开始向 API 进行提交数据
 		// e.preventDefault();
-		// var myFetchOptions = {
-		// 	method: 'GET'
-		// };
+		var myFetchOptions = {
+            method: 'GET',
+		};
 		var formData= forms.getFieldsValue();
 		console.log(formData);
-		// fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=register&username=userName&password=password&r_userName="+formData.userName+"&r_password="+formData.password+"&r_confirmPassword="+formData.confirmPassword,myFetchOptions).
-		// then(response=>response.json()).then(json=>{
-		// 	this.setState({userNickName:json.NickUserName,userid:json.UserId});
-
-        // });
+		fetch('http://127.0.0.1:4000/artist/list?cat=1001&initial=b',myFetchOptions).
+		then(response=>response.json()).then(json=>{
+            console.log(json)
+        });
         props.closeLogin(formData)
 		message.success("请求成功！");
 		// this.setModalVisible(false);

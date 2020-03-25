@@ -9,16 +9,21 @@
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
     "antd": "^4.0.4",
+    "apicache": "^1.5.2",
+    "express": "^4.17.1",
     "fetch": "^1.1.0",
+    "pac-proxy-agent": "^3.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.3.0"
+    "react-scripts": "3.3.0",
+    "request": "^2.88.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "serve":"node app.js"
   },
   "eslintConfig": {
     "extends": "react-app"
